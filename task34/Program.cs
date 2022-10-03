@@ -3,10 +3,11 @@
 [345, 897, 568, 234] -> 2*/
 
 Console.Clear();
-int[] array = CreateArray(10);
+Console.Write("Введите количество элементов массива: ");
+int length = int.Parse(Console.ReadLine()!);
+int[] array = CreateArray(length);
 PrintArray(array);
 Console.WriteLine("Количество четных элементов в массиве: " + EvenNumbersCount(array));
-
 
 
 
