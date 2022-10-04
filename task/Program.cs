@@ -5,34 +5,44 @@
 Console.Clear();
 
 int[] array = {1, 0, 1, 1, 1, 1, 1, 0, 1, 1};
+int counter = 0;
+int element = 0;
+int position = 0;
 
-int count = 0;
-int tempCount = 0;
-int index = 0;
-int tempIndex = 0;
-int number = array[0];
-int tempNumber = array[0];
-for (int i = 0; i < array.Length; i++)
+
+GetInfo(array, out counter, out element, out position);
+Console.WriteLine(counter);
+Console.WriteLine(element);
+Console.WriteLine(position);
+
+
+void GetInfo(int[] array, out int count, out int number, out int index)
 {
-    if (array[i] == tempNumber)
+    count = 0;
+    int tempCount = 0;
+    index = 0;
+    int tempIndex = 0;
+    number = array[0];
+    int tempNumber = array[0];
+    for (int i = 0; i < array.Length; i++)
     {
-        tempCount++;
-    }
-    else
-    {
-        if (tempCount > count)
+        if (array[i] == tempNumber)
         {
-            count = tempCount;
-            number = tempNumber;
-            index = tempIndex;
+            tempCount++;
         }
-        tempNumber = array[i];
-        tempCount = 1;
-        tempIndex = i;
+        else
+        {
+            if (tempCount > count)
+            {
+                count = tempCount;
+                number = tempNumber;
+                index = tempIndex;
+            }
+            tempNumber = array[i];
+            tempCount = 1;
+            tempIndex = i;
+        }
     }
 }
 
-Console.WriteLine(count);
-Console.WriteLine(number);
-Console.WriteLine(index);
 
