@@ -19,7 +19,7 @@ double[] CreateArray(int len)
     Random rand = new Random();
     for (int i = 0; i < len; i++)
     {
-        arr[i] = rand.NextDouble();
+        arr[i] = Math.Round(rand.NextDouble(), 2);
     }
     return arr;
 }
